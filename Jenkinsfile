@@ -1,11 +1,8 @@
 pipeline {
-  agent any
+    agent {
+        docker { image 'node:20.11.1-alpine3.19' }
+    }
   stages {
-    stage('Initialize'){
-        steps {
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"                }
-        }
     stage('Build') {
       steps {
         sh 'docker build -t weather-rest .' 
