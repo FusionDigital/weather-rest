@@ -1,10 +1,6 @@
 pipeline {
-  agent any
+  agent dind
   stages {
-    tools {
-        docker 'latest'
-        jdk 'jdk17'
-    }
     stage('Build') {
       steps {
         sh 'docker build -t weather-rest .' 
