@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-rest
+  template:
+    metadata:
+      labels:
+        app: weather-rest
+    spec:
+      containers:
+      - name: weather-rest
+        image: revdennis/weather-rest:latest
+        ports:
+        - containerPort: 80

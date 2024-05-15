@@ -1,0 +1,12 @@
+iapiVersion: v1
+kind: Service
+metadata:
+  name: weather-rest-service
+spec:
+  selector:
+    app: weather-rest
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
