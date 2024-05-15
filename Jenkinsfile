@@ -16,7 +16,7 @@ pipeline {
     stage('Push') {
       steps {
         sh 'docker login -u $DOCKER_CREDS_USR -p $DOCKER_CREDS_PSW'
-        sh 'docker push weather-rest'
+        sh 'docker push revdennis/weather-rest:latest'
       }
     }
     stage('Deploy') {
