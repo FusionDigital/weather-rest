@@ -1,5 +1,9 @@
 pipeline {
-  agent dind
+    agent {
+      kubernetes {
+          inheritFrom 'dind'
+      }
+  }
   stages {
     stage('Build') {
       steps {
