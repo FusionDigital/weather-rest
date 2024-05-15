@@ -7,7 +7,6 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'whereis docker' 
         sh 'find / -name docker' 
       }
     }
