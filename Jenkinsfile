@@ -5,11 +5,6 @@ pipeline {
       }
   }
   stages {
-    stage('Test') {
-      steps {
-        sh 'find / -name docker' 
-      }
-    }
     stage('Build') {
       steps {
         sh 'docker build -t weather-rest .' 
