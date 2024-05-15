@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t weather-rest .' 
+        sh 'docker build -t revdennis/weather-rest .' 
       }
     }
     stage('Push') {
