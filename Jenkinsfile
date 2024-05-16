@@ -13,6 +13,7 @@ pipeline {
     stage('Deploy') {
     agent { kubernetes { inheritFrom 'kubectl' } }
       steps {
+        sh 'find / -name kubectl'
         sh 'kubectl apply -f deployment.yaml'
         sh 'kubectl apply -f service.yaml'
       }
